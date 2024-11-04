@@ -24,6 +24,7 @@ int main()
     if (dat[i] == 0)
     {
       printf("Anagram");
+      break;
     }
   }
   return 0;

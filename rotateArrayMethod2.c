@@ -6,7 +6,7 @@ void traverse(int arr[],int n)
     }
 }
 void arrayInsert(int arr[],int n,int x){
-      for(int j=n-1;j>0;j--){
+      for(int j=n-1;j>=0;j--){
         arr[j+1]=arr[j];
       }
       arr[0]=x;
@@ -16,7 +16,7 @@ void rotateArrayMethod2(int arr[],int n,int k)
     k=k%n;
     for(int i=0;i<k;i++)
     {
-        arrayInsert(arr[i],n,arr[n-1]);
+        arrayInsert(arr,n,arr[n-1]);
     }
       traverse(arr,n);
 }

@@ -21,6 +21,20 @@ void mergeArray(int a[], int b[], int n, int m)
             k++;
         }
     }
+    while(i<n)
+    {
+        c[k]=a[i];
+        i++;
+        k++;
+    }
+    while(j<m)
+    {
+        c[k]=b[j];
+        j++;
+        k++;
+
+
+    }
     traverse(c, k);
 }
 void traverse(int c[], int k)
@@ -33,10 +47,10 @@ void traverse(int c[], int k)
 }
 int main()
 {
-    int a[] = {5, 10, 15, 20, 25};
-    int n = 5;
-    int b[] = {2, 5, 12, 20, 25, 60};
-    int m = 6;
+    int a[] = {4,9,5};
+    int n = 3;
+    int b[] = {9,4,9,8,4};
+    int m = 5;
     mergeArray(a, b, n, m);
     return 0;
 }
