@@ -4,12 +4,45 @@
 // #include <cstdlib>
 // #include <ctime>
 #include<bits/stdc++.h>
+
 using namespace std;
 
 void generateRandomArray(vector<int>& arr, int n) {
     srand(time(0));
     for (int i = 0; i < n; ++i) {
         arr.push_back(rand() % 1000000);
+    }
+}
+
+
+void mergeArray(vector<int>& a, int low, int mid, int high) {
+    vector<int> c(high - low + 1);
+    int i = low, j = mid + 1, k = 0; // Start k from 0
+    while(i <= mid && j <= high) {
+        if(a[i] < a[j]) {
+            c[k++] = a[i++];
+        } else {
+            c[k++] = a[j++];
+        }
+    }
+    while(i <= mid) {
+        c[k++] = a[i++];
+    }
+    while(j <= high) {
+        c[k++] = a[j++];
+    }
+    
+    for(int i =low; i <= high; i++) {
+        a[i] = c[i-low];
+    }
+}
+
+void mergeSort(vector<int>& a, int low, int high) {
+    if(low < high) {
+        int mid = (low + high) / 2;
+        mergeSort(a, low, mid);
+        mergeSort(a, mid + 1, high);
+        mergeArray(a, low, mid, high);
     }
 }
 
@@ -51,30 +84,38 @@ void insertionSort(vector<int> arr) {
 }
 
 int main() {
-    int n = 500000;
+    int no = 50000000;
     vector<int> arr;
-    generateRandomArray(arr, n);
+    generateRandomArray(arr, no);
 
-    auto bubbleArr = arr;
-    auto start = chrono::high_resolution_clock::now();
-    bubbleSort(bubbleArr);
-    auto end = chrono::high_resolution_clock::now();
-    chrono::duration<double> bubbleSortTime = end - start;
-    cout << "Bubble Sort Time: " << bubbleSortTime.count() << " seconds" << endl;
+    // auto bubbleArr = arr;
+    // auto start = chrono::high_resolution_clock::now();
+    // bubbleSort(bubbleArr);
+    // auto end = chrono::high_resolution_clock::now();
+    // chrono::duration<double> bubbleSortTime = end - start;
+    // cout << "Bubble Sort Time: " << bubbleSortTime.count() << " seconds" << endl;
 
-    auto selectionArr = arr;
-    start = chrono::high_resolution_clock::now();
-    selectionSort(selectionArr);
-    end = chrono::high_resolution_clock::now();
-    chrono::duration<double> selectionSortTime = end - start;
-    cout << "Selection Sort Time: " << selectionSortTime.count() << " seconds" << endl;
+//     auto selectionArr = arr;
+//     auto start = chrono::high_resolution_clock::now();
+//     selectionSort(selectionArr);
+//    auto end = chrono::high_resolution_clock::now();
+//     chrono::duration<double> selectionSortTime = end - start;
+//     cout << "Selection Sort Time: " << selectionSortTime.count() << " seconds" << endl;
 
-    auto insertionArr = arr;
-    start = chrono::high_resolution_clock::now();
-    insertionSort(insertionArr);
-    end = chrono::high_resolution_clock::now();
-    chrono::duration<double> insertionSortTime = end - start;
-    cout << "Insertion Sort Time: " << insertionSortTime.count() << " seconds" << endl;
+//     auto insertionArr = arr;
+//     start = chrono::high_resolution_clock::now();
+//     insertionSort(insertionArr);
+//     end = chrono::high_resolution_clock::now();
+//     chrono::duration<double> insertionSortTime = end - start;
+//     cout << "Insertion Sort Time: " << insertionSortTime.count() << " seconds" << endl;
+
+    auto mergeArr = arr;
+    int n=mergeArr.size();
+   auto start = chrono::high_resolution_clock::now();
+    mergeSort(mergeArr,0,n-1);
+   auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> mergeSortTime = end - start;
+    cout << "merge Sort Time: " << mergeSortTime.count() << " seconds" << endl;
 
     return 0;
 }

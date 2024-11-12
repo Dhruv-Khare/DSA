@@ -18,8 +18,8 @@ void deleteArray(int arr[],int n,int i){
 int main()
 {
   int arr[]={1,2,3,4,5};
-
-  deleteArray(arr,5,3);
+   cou
+  deleteArray(arr,5,1);
   return 0;
 
 }
