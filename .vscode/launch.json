@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/dhruv/New folder/Dhruv/New folder",
-      "program": "d:/dhruv/New folder/Dhruv/New folder/build/Debug/outDebug",
+      "cwd": "d:/dhruv/New folder/Dhruv/New folder/icpc1",
+      "program": "d:/dhruv/New folder/Dhruv/New folder/icpc1/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
