@@ -3,3 +3,8 @@
 /icpc1/**
 *.tmp
 *.log
+/Python/**
+/output/**
+/build/**
+
+*.gitignore

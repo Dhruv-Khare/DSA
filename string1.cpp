@@ -13,13 +13,13 @@ int main()
   // cout<<str1.substr(1,5)<<'\n';
   // cout<<str1.substr(0,3)<<'\n';
   // cout<<str1.substr(1,3)<<'\n';
-  // for(int i=0;i<str1.size();i++)
-  // {
-  //   for(int j=1;j<=str1.size()-i;j++)
-  //   {
-  //     cout<<str1.substr(i,j)<<"\n";
-  //   }
-  // }
+  for(int i=0;i<str1.size();i++)
+  {
+    for(int j=1;j<=str1.size()-i;j++)
+    {
+      cout<<str1.substr(i,j)<<"\n";
+    }
+  }
   // string str=to_string(1245);
   // cout<<str<<'\n';
   // int x=stoi(str);

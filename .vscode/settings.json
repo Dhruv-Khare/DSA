@@ -60,6 +60,7 @@
     "*.embeddedhtml": "html",
     "iostream": "cpp",
     "vector": "cpp",
-    "bitset": "cpp"
+    "bitset": "cpp",
+    "ostream": "cpp"
   }
 }

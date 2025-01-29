@@ -224,6 +224,26 @@ int bstDelete(struct node* &t, struct node* p)
     return p->data; 
 }
 // *****************************************************************************************
+int maxPathSum(struct node* t)
+{
+  if(t==NULL)
+  {
+    return 0;
+  }
+  else{
+    if(t->left==NULL&&t->right==NULL)
+    {
+      return t->data;
+    }
+    else{
+      int l=maxPathSum(t->left);
+      int r=maxPathSum(t->right);
+      int m=max(l,r);
+      return t->data+m;
+    }
+  }
+}
+//*****************************************************************************************
 int main()
 {
   struct node* root=NULL;
@@ -245,6 +265,8 @@ int main()
   cout<<res2->data<<"\n";
   int s=bstDelete(root,x);
   cout<<s<<'\n';
+  int mps=maxPathSum(root);
+  cout<<mps<<'\n';
   inOrderTraversal( root);
 
 }

@@ -7,18 +7,18 @@ static bool cmp(int x,int y)
 {
   if(x%2!=0&&y%2!=0)
   {
-    return x>y;
+    return x<y;
   }
   else if(x%2==0&&y%2==0)
   {
-    return x<y;
+    return x>y;
   }
   else if(x%2!=0&& y%2==0)
   {
-    return true;
+    return false;
   }
   else{
-    return false;
+    return true;
   }
 }
 int main()
