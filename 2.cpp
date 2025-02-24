@@ -1,23 +1,24 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
-static bool cmp(int x,int y)
+static bool cmp(int x, int y)
 {
-  if(x%2!=0&&y%2!=0)
+  if (x % 2 != 0 && y % 2 != 0)
   {
-    return x<y;
+    return x < y;
   }
-  else if(x%2==0&&y%2==0)
+  else if (x % 2 == 0 && y % 2 == 0)
   {
-    return x>y;
+    return x > y;
   }
-  else if(x%2!=0&& y%2==0)
+  else if (x % 2 != 0 && y % 2 == 0)
   {
     return false;
   }
-  else{
+  else
+  {
     return true;
   }
 }
@@ -34,11 +35,9 @@ int main()
   arr.push_back(51);
   arr.push_back(40);
 
-
-
-  sort(arr.begin(),arr.end(),cmp);
-  for(int i=0;i<arr.size();i++)
+  sort(arr.begin(), arr.end(), cmp);
+  for (int i = 0; i < arr.size(); i++)
   {
-    cout<<arr[i]<<" ";
+    cout << arr[i] << " ";
   }
 }
